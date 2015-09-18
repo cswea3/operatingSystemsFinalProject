@@ -1,0 +1,107 @@
+/*
+----------------------------------------------------
+                 Project Two
+                   CSC 389
+                  Fall 2014
+	           Craig Swearingen
+	             19 Dec 2014
+----------------------------------------------------
+*/
+
+man_wants_to_enter:
+remove the first male from the list
+check to see if it is valid
+
+if in automatic mode:
+	decrement the counting semaphore
+	create a thread calling bathroom
+	increment the thread count
+	simulate the time spent in the bathroom with sleep
+	call man_wants_to_leave
+	decrement the mutex for changing state variables
+	decrement state variables //they previously have been incremented in the other thread
+	update the cycle count
+	increment the mutex for changing state variables
+	increment the counting semaphore
+
+if in manual mode:
+	// if in manual mode it is already in a seperate thread
+	decrement the counting semaphore
+	decrement the mutex for changing state variables
+	update state variables
+	increment the mutex for changing state variables
+	call bathroom 
+	decrement the mutex for changing state variables
+	update state variables
+	increment the mutex for changing state variables
+	increment the counting semaphore
+
+end man_wants_to_enter
+
+//same as man_wants_to_enter except remove a female from the list
+woman_wants_to_enter:
+remove the first female from the list
+check to see if it is valid
+
+if in automatic mode:
+	decrement the counting semaphore
+	create a thread calling bathroom
+	increment the thread count
+	simulate the time spent in the bathroom with sleep
+	call man_wants_to_leave
+	decrement the mutex for changing state variables
+	decrement state variables //they previously have been incremented in the other thread
+	update the cycle count
+	increment the mutex for changing state variables
+	increment the counting semaphore
+
+if in manual mode:
+	// if in manual mode it is already in a seperate thread
+	decrement the counting semaphore
+	decrement the mutex for changing state variables
+	update state variables
+	increment the mutex for changing state variables
+	call bathroom 
+	decrement the mutex for changing state variables
+	update state variables
+	increment the mutex for changing state variables
+	increment the counting semaphore
+
+end woman_wants_to_enter
+
+
+bathroom:
+if in automatic mode
+	if male
+		decrement mutex for changing state variable
+		change state variables
+		increment state variable
+	if female
+		decrement mutex for changing state variable
+		change state variables
+		increment state variable
+end if in automatic mode
+
+wait for release variable to be set
+
+free memory for current person
+
+end bathroom
+
+man_wants_to_leave:
+decrement release mutex
+set release variable
+increment release mutex
+
+end man_wants_to_leave
+
+//same as man_wants_to_leave
+woman_wants_to_leave:
+decrement release mutex
+set release variable
+increment release mutex
+
+end woman_wants_to_leave
+
+
+
