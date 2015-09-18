@@ -3,8 +3,8 @@
                  Project Two
                    CSC 389
                   Fall 2014
-	             Craig Swearingen
-		             19 Dec 2014
+	        Craig Swearingen
+	          19 Dec 2014
 ----------------------------------------------------
 */
 
@@ -20,6 +20,7 @@ line for how many people should be in the line.
 Ex. $./projectTwo 25
 If in manual a user can add people to the line, let them
 in the bathroom, or let them leave the bathroom
+
 ----------------------------------------------------
 To compile and run
 
@@ -31,6 +32,7 @@ To compile and run
 	or
 3. $./projectTwo n
 	where n is a number from 20-100
+
 ----------------------------------------------------
 To delete files made during compilation and recompile
 
