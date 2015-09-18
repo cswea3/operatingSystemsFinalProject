@@ -3,8 +3,8 @@
                  Project Two
                    CSC 389
                   Fall 2014
-	        Craig Swearingen
-	          19 Dec 2014
+	          Craig Swearingen
+	             19 Dec 2014
 ----------------------------------------------------
 */
 
